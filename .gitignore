@@ -20,3 +20,6 @@ rad.json
 *.flf
 #Test results file
 TestResults.xml
+#put my files which i don't want in git
+src\GradeBookApp\bin
+src\GradeBookApp\obj
