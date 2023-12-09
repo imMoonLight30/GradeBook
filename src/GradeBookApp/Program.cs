@@ -2,21 +2,28 @@
 
 class Program
 {
-    static void Main(string[] args)
+    public static void Main(string[] args)
     {
         Console.WriteLine("Hello, World!");
+        var book = new Book("chandra's");
+        book.AddGrade(89.1);
+        book.AddGrade(100);
+        book.AddGrade(45.3);
+
+
+        //avarage work , and learning array and list.
         double[] arr= new double[5]; // array defination
         var arr2 = new float[5];
-        for(var a=0;a<5;a++){
-            Console.WriteLine("this is arrays"+arr[a]+" "+arr2[a]);
-        }
-        //avrage work
         var numbers = new[] {10.2, 10.3 , 10, 15};
-        List<double> grade= new List<double>();
+        for(var a=0;a<5;a++){
+            //Console.WriteLine("this is arrays"+arr[a]+" "+arr2[a]);
+        }
+
+        //avrage work
+        List<double> grade= book.GetGrades();
         grade.Add(10.0);
-        Console.WriteLine(grade[0]);
         float sum=0;
-        foreach(float num in numbers){
+        foreach(float num in grade){
             sum += num;
         }
         float avg = sum/numbers.Length;
