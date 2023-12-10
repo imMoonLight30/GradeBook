@@ -20,7 +20,7 @@ public class BookTests
     [TestMethod]
     public void Testmethod2()
     {
-
+        Assert.IsFalse(false);
     }
 }
 }
