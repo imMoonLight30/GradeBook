@@ -6,7 +6,7 @@ namespace GradeBookApp.tests
 public class BookTests
 {
     [TestMethod]
-    public void TestMethod1()
+    public void GetGradesTests()
     {
         //arrange
         var book = new Book("TestBook");
