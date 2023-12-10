@@ -9,12 +9,12 @@ public class BookTests
     public void TestMethod1()
     {
         //arrange
-        int expected =5;
-        int actual = 5;
+        var book = new Book("TestBook");
         //act
-        
+        book.AddGrade(10.5);
+        var ans = book.GetGrades();
         //assert
-        Assert.AreEqual(expected, actual);
+        Assert.AreEqual(10.5, ans[0]);
     }
 
     [TestMethod]
