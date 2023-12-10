@@ -9,6 +9,9 @@ class Program
         book.AddGrade(89.1);
         book.AddGrade(100);
         book.AddGrade(45.3);
+        book.ShowStatics();
+
+        //unit test
 
 
         //avarage work , and learning array and list.
@@ -19,14 +22,8 @@ class Program
             //Console.WriteLine("this is arrays"+arr[a]+" "+arr2[a]);
         }
 
-        //avrage work
+        //List work
         List<double> grade= book.GetGrades();
         grade.Add(10.0);
-        float sum=0;
-        foreach(float num in grade){
-            sum += num;
-        }
-        float avg = sum/numbers.Length;
-        Console.Write($"this is avrage of number - {avg}");
     }
 }
