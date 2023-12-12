@@ -12,12 +12,18 @@ namespace GradeBookApp
         //constructor
         public Book(string name)
         {
+            category = "constructor change it";
             grades= new List<double>();
-            this.name=name;
+            Name=name;
         }
         //members
         private List<double> grades;
-        private string name;
+        //private string Name;
+        public string Name
+        {
+            get; private set;
+        }
+        public readonly string category = "readonly variable";
         //methods
         public void AddGrade(double grade)
         {
@@ -25,7 +31,13 @@ namespace GradeBookApp
             {
                 //Console.WriteLine("grade in range");
                 grades.Add(grade);
+            }else{
+                throw new ArgumentException("grade is out of range");
             }
+        }
+        public string AddGrade(double grade, string n){
+
+            return "overloading";
         }
         public List<double> GetGrades(){
             return grades;

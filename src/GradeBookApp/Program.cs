@@ -6,14 +6,21 @@ class Program
     {
         Console.WriteLine("Hello, World!");
         var book = new Book("chandra's");
+        try{
         book.AddGrade(89.1);
         book.AddGrade(100);
         book.AddGrade(45.3);
+        book.AddGrade(105);
+        }catch(Exception ex){
+            Console.WriteLine(ex);
+        }
         var value =book.ShowStatics();
         Console.WriteLine("avg - "+value.avrage);
         Console.WriteLine("low - "+value.low);
         Console.WriteLine("high - "+value.high);
-        //unit test
+        Console.WriteLine("getter, setter - "+book.Name);
+        Console.WriteLine("readonly variable "+book.category);
+        //building type
 
 
         //avarage work , and learning array and list.
