@@ -9,8 +9,10 @@ class Program
         book.AddGrade(89.1);
         book.AddGrade(100);
         book.AddGrade(45.3);
-        book.ShowStatics();
-
+        var value =book.ShowStatics();
+        Console.WriteLine("avg - "+value.avrage);
+        Console.WriteLine("low - "+value.low);
+        Console.WriteLine("high - "+value.high);
         //unit test
 
 
