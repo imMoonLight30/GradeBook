@@ -7,10 +7,39 @@ using System.Threading.Tasks;
 
 namespace GradeBookApp
 {
-    public class Book
+    public interface IBook
+    {   
+        void AddGrade(double grade);
+        Statistics GetStatistics();
+        string Name { get; }
+    }
+    public class NameObject :IBook
+    {
+        public NameObject(string name)
+        {
+            Name = name;
+        }
+
+        public string Name
+        {
+            get;
+            set;
+        }
+
+        public virtual void AddGrade(double grade)
+        {
+            throw new NotImplementedException();
+        }
+
+        public virtual Statistics GetStatistics()
+        {
+            throw new NotImplementedException();
+        }
+    }
+    public class Book : NameObject
     {
         //constructor
-        public Book(string name)
+        public Book(string name) : base(name)
         {
             category = "constructor change it";
             grades= new List<double>();
@@ -18,14 +47,9 @@ namespace GradeBookApp
         }
         //members
         private List<double> grades;
-        //private string Name;
-        public string Name
-        {
-            get; private set;
-        }
         public readonly string category = "readonly variable";
         //methods
-        public void AddGrade(double grade)
+        public override void AddGrade(double grade)
         {
             if(grade>=0 && grade<=100)
             {
@@ -42,7 +66,7 @@ namespace GradeBookApp
         public List<double> GetGrades(){
             return grades;
         }
-        internal Statistics ShowStatics()
+        public Statistics ShowStatics()
         {
             var stats= new Statistics();
             double sum=0;
